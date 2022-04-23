@@ -58,6 +58,7 @@
     <Type Name="Order">
       <Column Name="id" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="state" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Column Name="principalId" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="totalPrice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="finalPrice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />

@@ -1289,6 +1289,8 @@ namespace Ex3
 		
 		private byte _state;
 		
+		private string _description;
+		
 		private System.Nullable<int> _principalId;
 		
 		private int _totalPrice;
@@ -1315,6 +1317,8 @@ namespace Ex3
     partial void OnidChanged();
     partial void OnstateChanging(byte value);
     partial void OnstateChanged();
+    partial void OndescriptionChanging(string value);
+    partial void OndescriptionChanged();
     partial void OnprincipalIdChanging(System.Nullable<int> value);
     partial void OnprincipalIdChanged();
     partial void OntotalPriceChanging(int value);
@@ -1373,6 +1377,26 @@ namespace Ex3
 					this._state = value;
 					this.SendPropertyChanged("state");
 					this.OnstateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_description", DbType="NVarChar(200)")]
+		public string description
+		{
+			get
+			{
+				return this._description;
+			}
+			set
+			{
+				if ((this._description != value))
+				{
+					this.OndescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._description = value;
+					this.SendPropertyChanged("description");
+					this.OndescriptionChanged();
 				}
 			}
 		}

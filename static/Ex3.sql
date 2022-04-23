@@ -78,6 +78,7 @@ CREATE TABLE [User] (    -- 用户，即进货负责人
 CREATE TABLE [Order] (    -- 订单
     [id] VARCHAR(16) PRIMARY KEY,    -- 订单号
     [state] TINYINT NOT NULL DEFAULT 0 CHECK([state] BETWEEN 0 AND 2),    -- 订单状态{0:未批准, 1:进行中, 2:已完成}
+    [description] NVARCHAR(200),
     [principalId] INT FOREIGN KEY REFERENCES [User],    -- 负责人（用户）编号
     [totalPrice] INT NOT NULL CHECK([totalPrice]>=0),    -- 总价格
     [finalPrice] INT NOT NULL CHECK([finalPrice]>=0),    -- 最终成交价
