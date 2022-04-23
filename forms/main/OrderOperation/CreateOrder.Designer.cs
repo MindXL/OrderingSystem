@@ -33,6 +33,10 @@
             this.lblDescription = new System.Windows.Forms.Label();
             this.btnAddMaterial = new System.Windows.Forms.Button();
             this.btnCreateOrder = new System.Windows.Forms.Button();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.txtTotalPrice = new System.Windows.Forms.TextBox();
+            this.lblFinalPrice = new System.Windows.Forms.Label();
+            this.txtFinalPrice = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gvMaterials)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,7 +72,7 @@
             // btnAddMaterial
             // 
             this.btnAddMaterial.AutoSize = true;
-            this.btnAddMaterial.Location = new System.Drawing.Point(375, 79);
+            this.btnAddMaterial.Location = new System.Drawing.Point(575, 76);
             this.btnAddMaterial.Name = "btnAddMaterial";
             this.btnAddMaterial.Size = new System.Drawing.Size(77, 25);
             this.btnAddMaterial.TabIndex = 3;
@@ -79,18 +83,57 @@
             // btnCreateOrder
             // 
             this.btnCreateOrder.AutoSize = true;
-            this.btnCreateOrder.Location = new System.Drawing.Point(590, 79);
+            this.btnCreateOrder.Location = new System.Drawing.Point(681, 76);
             this.btnCreateOrder.Name = "btnCreateOrder";
             this.btnCreateOrder.Size = new System.Drawing.Size(77, 25);
             this.btnCreateOrder.TabIndex = 4;
             this.btnCreateOrder.Text = "生成订单";
             this.btnCreateOrder.UseVisualStyleBackColor = true;
+            this.btnCreateOrder.Click += new System.EventHandler(this.btnCreateOrder_Click);
+            // 
+            // lblTotalPrice
+            // 
+            this.lblTotalPrice.AutoSize = true;
+            this.lblTotalPrice.Location = new System.Drawing.Point(12, 81);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(67, 15);
+            this.lblTotalPrice.TabIndex = 5;
+            this.lblTotalPrice.Text = "总金额：";
+            // 
+            // txtTotalPrice
+            // 
+            this.txtTotalPrice.Location = new System.Drawing.Point(85, 78);
+            this.txtTotalPrice.Name = "txtTotalPrice";
+            this.txtTotalPrice.Size = new System.Drawing.Size(100, 25);
+            this.txtTotalPrice.TabIndex = 6;
+            this.txtTotalPrice.TextChanged += new System.EventHandler(this.txtTotalPrice_TextChanged);
+            // 
+            // lblFinalPrice
+            // 
+            this.lblFinalPrice.AutoSize = true;
+            this.lblFinalPrice.Location = new System.Drawing.Point(255, 81);
+            this.lblFinalPrice.Name = "lblFinalPrice";
+            this.lblFinalPrice.Size = new System.Drawing.Size(67, 15);
+            this.lblFinalPrice.TabIndex = 7;
+            this.lblFinalPrice.Text = "成交价：";
+            // 
+            // txtFinalPrice
+            // 
+            this.txtFinalPrice.Location = new System.Drawing.Point(328, 78);
+            this.txtFinalPrice.Name = "txtFinalPrice";
+            this.txtFinalPrice.Size = new System.Drawing.Size(100, 25);
+            this.txtFinalPrice.TabIndex = 8;
+            this.txtFinalPrice.TextChanged += new System.EventHandler(this.txtFinalPrice_TextChanged);
             // 
             // CreateOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtFinalPrice);
+            this.Controls.Add(this.lblFinalPrice);
+            this.Controls.Add(this.txtTotalPrice);
+            this.Controls.Add(this.lblTotalPrice);
             this.Controls.Add(this.btnCreateOrder);
             this.Controls.Add(this.btnAddMaterial);
             this.Controls.Add(this.lblDescription);
@@ -112,5 +155,9 @@
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.Button btnAddMaterial;
         private System.Windows.Forms.Button btnCreateOrder;
+        private System.Windows.Forms.Label lblTotalPrice;
+        private System.Windows.Forms.TextBox txtTotalPrice;
+        private System.Windows.Forms.Label lblFinalPrice;
+        private System.Windows.Forms.TextBox txtFinalPrice;
     }
 }

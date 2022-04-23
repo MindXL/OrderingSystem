@@ -8,7 +8,7 @@ namespace Ex3
 {
     internal class Character
     {
-        private readonly int id;
+        public readonly int id;
         public readonly string account;
         public readonly string name;
 

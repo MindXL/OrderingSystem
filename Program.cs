@@ -24,8 +24,7 @@ namespace Ex3
 
             if (Globals.character != null)
                 Application.Run(new Main());*/
-            //Application.Run(new Inventory());
-            Application.Run(new Ex3.forms.main.OrderOperation.SelectMaterial());
+            Application.Run(new Orders());
         }
     }
 }

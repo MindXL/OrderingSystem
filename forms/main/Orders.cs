@@ -9,15 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Ex3.forms.main.OrderOperation;
+using Ex3.lib;
 
 namespace Ex3.forms.main
 {
     public partial class Orders : Form
     {
         private readonly Ex3DataContext db = new Ex3DataContext();
-
-        private enum OrderState
-        { NULL = -1, Unaurhorized = 0, Unfinished, Finished };
 
         public Orders()
         {
