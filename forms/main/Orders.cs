@@ -25,14 +25,21 @@ namespace Ex3.forms.main
 
         private void BindData(OrderState state = OrderState.NULL)
         {
-            var orders =
-                state == OrderState.NULL ?
-                from o in db.Order
-                select o
-                :
-                from o in db.Order
-                where state.Equals(o.state)
-                select o;
+            var orders = from o in db.Order
+                         join u in db.User on o.principalId equals u.id
+                         where (state == OrderState.NULL || state.Equals(o.state))
+                         select new
+                         {
+                             订单号 = o.id,
+                             状态 = Utils.TranslateOrderState(int.Parse(o.state.ToString())),
+                             描述 = o.description,
+                             负责人 = u.name,
+                             总价格 = o.totalPrice,
+                             成交价 = o.finalPrice,
+                             订单创建日期 = o.genDate.ToString(),
+                             订单批准日期 = o.approveDate == null ? "" : o.approveDate.ToString(),
+                             订单完成日期 = o.finishDate == null ? "" : o.finishDate.ToString()
+                         };
 
             gvOrder.DataSource = orders;
             lblOrdNum.Text = "显示数量：" + orders.Count().ToString();
