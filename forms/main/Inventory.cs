@@ -82,5 +82,12 @@ namespace Ex3.forms.main
         {
             int id = int.Parse(gvInventory.SelectedRows[0].Cells[0].Value.ToString());
         }
+
+        private void btnShowOrderDlg_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            (new Orders()).ShowDialog();
+            this.Close();
+        }
     }
 }

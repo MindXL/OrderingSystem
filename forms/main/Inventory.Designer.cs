@@ -35,6 +35,7 @@
             this.btnWarn = new System.Windows.Forms.Button();
             this.btnShowInventory = new System.Windows.Forms.Button();
             this.lblMatNum = new System.Windows.Forms.Label();
+            this.btnShowOrderDlg = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvInventory)).BeginInit();
             this.cms_gvInventoryCell.SuspendLayout();
             this.SuspendLayout();
@@ -98,11 +99,23 @@
             this.lblMatNum.TabIndex = 3;
             this.lblMatNum.Text = "显示数量：";
             // 
+            // btnShowOrderDlg
+            // 
+            this.btnShowOrderDlg.AutoSize = true;
+            this.btnShowOrderDlg.Location = new System.Drawing.Point(680, 52);
+            this.btnShowOrderDlg.Name = "btnShowOrderDlg";
+            this.btnShowOrderDlg.Size = new System.Drawing.Size(77, 25);
+            this.btnShowOrderDlg.TabIndex = 4;
+            this.btnShowOrderDlg.Text = "查看订单";
+            this.btnShowOrderDlg.UseVisualStyleBackColor = true;
+            this.btnShowOrderDlg.Click += new System.EventHandler(this.btnShowOrderDlg_Click);
+            // 
             // Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnShowOrderDlg);
             this.Controls.Add(this.lblMatNum);
             this.Controls.Add(this.btnShowInventory);
             this.Controls.Add(this.btnWarn);
@@ -123,5 +136,6 @@
         private System.Windows.Forms.Button btnWarn;
         private System.Windows.Forms.Button btnShowInventory;
         private System.Windows.Forms.Label lblMatNum;
+        private System.Windows.Forms.Button btnShowOrderDlg;
     }
 }

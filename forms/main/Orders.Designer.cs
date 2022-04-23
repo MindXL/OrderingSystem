@@ -35,6 +35,7 @@
             this.btnShowUnfinished = new System.Windows.Forms.Button();
             this.btnShowFinished = new System.Windows.Forms.Button();
             this.btnCreateOrder = new System.Windows.Forms.Button();
+            this.btnShowInventoryDlg = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvOrder)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,11 +114,23 @@
             this.btnCreateOrder.UseVisualStyleBackColor = true;
             this.btnCreateOrder.Click += new System.EventHandler(this.btnCreateOrder_Click);
             // 
+            // btnShowInventoryDlg
+            // 
+            this.btnShowInventoryDlg.AutoSize = true;
+            this.btnShowInventoryDlg.Location = new System.Drawing.Point(713, 23);
+            this.btnShowInventoryDlg.Name = "btnShowInventoryDlg";
+            this.btnShowInventoryDlg.Size = new System.Drawing.Size(77, 25);
+            this.btnShowInventoryDlg.TabIndex = 7;
+            this.btnShowInventoryDlg.Text = "查看库存";
+            this.btnShowInventoryDlg.UseVisualStyleBackColor = true;
+            this.btnShowInventoryDlg.Click += new System.EventHandler(this.btnShowInventoryDlg_Click);
+            // 
             // Orders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnShowInventoryDlg);
             this.Controls.Add(this.btnCreateOrder);
             this.Controls.Add(this.btnShowFinished);
             this.Controls.Add(this.btnShowUnfinished);
@@ -142,5 +155,6 @@
         private System.Windows.Forms.Button btnShowUnfinished;
         private System.Windows.Forms.Button btnShowFinished;
         private System.Windows.Forms.Button btnCreateOrder;
+        private System.Windows.Forms.Button btnShowInventoryDlg;
     }
 }

@@ -69,5 +69,12 @@ namespace Ex3.forms.main
         {
             CreateOrder.ShowUnique();
         }
+
+        private void btnShowInventoryDlg_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            (new Inventory()).ShowDialog();
+            this.Close();
+        }
     }
 }
