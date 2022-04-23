@@ -96,12 +96,6 @@
     <Compile Include="lib\Character.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="lib\OrderState.cs" />
-    <Compile Include="Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
-    </Compile>
     <Compile Include="forms\authentication\Login.cs">
       <SubType>Form</SubType>
     </Compile>

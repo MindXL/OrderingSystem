@@ -41,6 +41,7 @@ namespace Ex3.forms.authentication
             else if (password.Length > Constants.MAX_PASSWORD_LENGTH)
             {
                 MessageBox.Show("密码的长度不应超过" + Constants.MAX_PASSWORD_LENGTH);
+                return;
             }
 
             var user = from u in db.User
