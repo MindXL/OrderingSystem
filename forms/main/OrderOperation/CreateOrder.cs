@@ -79,34 +79,57 @@ namespace Ex3.forms.main.OrderOperation
             return DateTime.Now.ToString();
         }
 
-        private void txtTotalPrice_TextChanged(object sender, EventArgs e)
-        {
-            if (txtTotalPrice.Text.Length > 0)
-                ValidatePrice(txtTotalPrice.Text);
-        }
-
-        private void txtFinalPrice_TextChanged(object sender, EventArgs e)
-        {
-            if (txtFinalPrice.Text.Length > 0)
-                ValidatePrice(txtFinalPrice.Text);
-        }
-
-        private static void ValidatePrice(string s)
+        private static bool ValidatePrice(string s)
         {
             try
             {
                 double num = double.Parse(s);
                 if (num < 0)
+                {
                     MessageBox.Show("价格必须大于等于0");
+                    return false;
+                }
             }
             catch
             {
                 MessageBox.Show("价格必须是有效的数");
+                return false;
             }
+            return true;
+        }
+
+        private void txtTotalPrice_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtTotalPrice.Text.Length > 0)
+                ValidatePrice(txtTotalPrice.Text);
+        }
+
+        private void txtFinalPrice_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtFinalPrice.Text.Length > 0)
+                ValidatePrice(txtFinalPrice.Text);
         }
 
         private void btnCreateOrder_Click(object sender, EventArgs e)
         {
+            if (txtTotalPrice.Text.Length == 0)
+            {
+                MessageBox.Show("请填写总金额");
+                return;
+            }
+            if (txtFinalPrice.Text.Length == 0)
+            {
+                MessageBox.Show("请填写成交价");
+                return;
+            }
+            if (!ValidatePrice(txtTotalPrice.Text) || !ValidatePrice(txtFinalPrice.Text))
+                return;
+            if (records.Count == 0)
+            {
+                MessageBox.Show("订单中无记录，无法创建订单。");
+                return;
+            }
+
             string orderId = HashOrderId();
             foreach (UnfinishedRecord record in records)
             {

@@ -100,21 +100,29 @@ namespace Ex3.forms.main.OrderOperation
             cbxMatModel.SelectedIndex = cbxMatName.SelectedIndex;
         }
 
-        private void txtMatAmount_TextChanged(object sender, EventArgs e)
+        private bool ValidateAmount(string s)
         {
-            if (txtMatAmount.Text.Length > 0)
+            try
             {
-                try
+                int num = int.Parse(txtMatAmount.Text);
+                if (num <= 0)
                 {
-                    int num = int.Parse(txtMatAmount.Text);
-                    if (num <= 0)
-                        MessageBox.Show("数量必须大于0");
-                }
-                catch
-                {
-                    MessageBox.Show("数量必须是整数");
+                    MessageBox.Show("数量必须大于0");
+                    return false;
                 }
             }
+            catch
+            {
+                MessageBox.Show("数量必须是整数");
+                return false;
+            }
+            return true;
+        }
+
+        private void txtMatAmount_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtMatAmount.Text.Length > 0)
+                ValidateAmount(txtMatAmount.Text);
         }
 
         private void cbxSupName_SelectedIndexChanged(object sender, EventArgs e)
@@ -138,6 +146,13 @@ namespace Ex3.forms.main.OrderOperation
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            if (txtMatAmount.Text.Length == 0)
+            {
+                MessageBox.Show("请填写数量");
+                return;
+            }
+            if (!ValidateAmount(txtMatAmount.Text))
+                return;
             CreateOrder.AddRecord(
                     MatIds[cbxManName.SelectedIndex],
                     cbxMatName.Text,

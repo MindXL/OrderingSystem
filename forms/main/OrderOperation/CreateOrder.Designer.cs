@@ -106,7 +106,7 @@
             this.txtTotalPrice.Name = "txtTotalPrice";
             this.txtTotalPrice.Size = new System.Drawing.Size(100, 25);
             this.txtTotalPrice.TabIndex = 6;
-            this.txtTotalPrice.TextChanged += new System.EventHandler(this.txtTotalPrice_TextChanged);
+            this.txtTotalPrice.Validating += new System.ComponentModel.CancelEventHandler(this.txtTotalPrice_Validating);
             // 
             // lblFinalPrice
             // 
@@ -123,7 +123,7 @@
             this.txtFinalPrice.Name = "txtFinalPrice";
             this.txtFinalPrice.Size = new System.Drawing.Size(100, 25);
             this.txtFinalPrice.TabIndex = 8;
-            this.txtFinalPrice.TextChanged += new System.EventHandler(this.txtFinalPrice_TextChanged);
+            this.txtFinalPrice.Validating += new System.ComponentModel.CancelEventHandler(this.txtFinalPrice_Validating);
             // 
             // CreateOrder
             // 

@@ -39,12 +39,12 @@
             this.cbxSupName = new System.Windows.Forms.ComboBox();
             this.lblSupName = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblSupPriName = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtSupPriName = new System.Windows.Forms.TextBox();
-            this.txtSupPriPhone = new System.Windows.Forms.TextBox();
             this.txtSupPriEmail = new System.Windows.Forms.TextBox();
+            this.txtSupPriPhone = new System.Windows.Forms.TextBox();
+            this.txtSupPriName = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblSupPriName = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -127,7 +127,7 @@
             this.txtMatAmount.Name = "txtMatAmount";
             this.txtMatAmount.Size = new System.Drawing.Size(100, 25);
             this.txtMatAmount.TabIndex = 9;
-            this.txtMatAmount.TextChanged += new System.EventHandler(this.txtMatAmount_TextChanged);
+            this.txtMatAmount.Validating += new System.ComponentModel.CancelEventHandler(this.txtMatAmount_Validating);
             // 
             // cbxSupName
             // 
@@ -165,23 +165,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "供货商";
             // 
-            // lblSupPriName
+            // txtSupPriEmail
             // 
-            this.lblSupPriName.AutoSize = true;
-            this.lblSupPriName.Location = new System.Drawing.Point(15, 114);
-            this.lblSupPriName.Name = "lblSupPriName";
-            this.lblSupPriName.Size = new System.Drawing.Size(67, 15);
-            this.lblSupPriName.TabIndex = 12;
-            this.lblSupPriName.Text = "负责人：";
+            this.txtSupPriEmail.Location = new System.Drawing.Point(545, 110);
+            this.txtSupPriEmail.Name = "txtSupPriEmail";
+            this.txtSupPriEmail.ReadOnly = true;
+            this.txtSupPriEmail.Size = new System.Drawing.Size(100, 25);
+            this.txtSupPriEmail.TabIndex = 17;
             // 
-            // label1
+            // txtSupPriPhone
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(257, 114);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 15);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "联系方式：";
+            this.txtSupPriPhone.Location = new System.Drawing.Point(345, 110);
+            this.txtSupPriPhone.Name = "txtSupPriPhone";
+            this.txtSupPriPhone.ReadOnly = true;
+            this.txtSupPriPhone.Size = new System.Drawing.Size(100, 25);
+            this.txtSupPriPhone.TabIndex = 16;
+            // 
+            // txtSupPriName
+            // 
+            this.txtSupPriName.Location = new System.Drawing.Point(100, 110);
+            this.txtSupPriName.Name = "txtSupPriName";
+            this.txtSupPriName.ReadOnly = true;
+            this.txtSupPriName.Size = new System.Drawing.Size(100, 25);
+            this.txtSupPriName.TabIndex = 15;
             // 
             // label2
             // 
@@ -192,29 +198,23 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "邮箱：";
             // 
-            // txtSupPriName
+            // label1
             // 
-            this.txtSupPriName.Location = new System.Drawing.Point(100, 110);
-            this.txtSupPriName.Name = "txtSupPriName";
-            this.txtSupPriName.ReadOnly = true;
-            this.txtSupPriName.Size = new System.Drawing.Size(100, 25);
-            this.txtSupPriName.TabIndex = 15;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(257, 114);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 15);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "联系方式：";
             // 
-            // txtSupPriPhone
+            // lblSupPriName
             // 
-            this.txtSupPriPhone.Location = new System.Drawing.Point(345, 110);
-            this.txtSupPriPhone.Name = "txtSupPriPhone";
-            this.txtSupPriPhone.ReadOnly = true;
-            this.txtSupPriPhone.Size = new System.Drawing.Size(100, 25);
-            this.txtSupPriPhone.TabIndex = 16;
-            // 
-            // txtSupPriEmail
-            // 
-            this.txtSupPriEmail.Location = new System.Drawing.Point(545, 110);
-            this.txtSupPriEmail.Name = "txtSupPriEmail";
-            this.txtSupPriEmail.ReadOnly = true;
-            this.txtSupPriEmail.Size = new System.Drawing.Size(100, 25);
-            this.txtSupPriEmail.TabIndex = 17;
+            this.lblSupPriName.AutoSize = true;
+            this.lblSupPriName.Location = new System.Drawing.Point(15, 114);
+            this.lblSupPriName.Name = "lblSupPriName";
+            this.lblSupPriName.Size = new System.Drawing.Size(67, 15);
+            this.lblSupPriName.TabIndex = 12;
+            this.lblSupPriName.Text = "负责人：";
             // 
             // btnSubmit
             // 
