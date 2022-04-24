@@ -59,7 +59,7 @@ namespace Ex3.forms.main.OrderOperation
             dlg = null;
         }
 
-        private void cbxManName_SelectedIndexChanged(object sender, EventArgs e)
+        private void CbxManName_SelectedIndexChanged(object sender, EventArgs e)
         {
             int manId = cbxManName.SelectedIndex + 1;
             var mats = from mat in materials
@@ -90,12 +90,12 @@ namespace Ex3.forms.main.OrderOperation
             cbxSupName.DataSource = sups.Select((sup) => sup.name);
         }
 
-        private void cbxMatModel_SelectionChangeCommitted(object sender, EventArgs e)
+        private void CbxMatModel_SelectionChangeCommitted(object sender, EventArgs e)
         {
             cbxMatName.SelectedIndex = cbxMatModel.SelectedIndex;
         }
 
-        private void cbxMatName_SelectionChangeCommitted(object sender, EventArgs e)
+        private void CbxMatName_SelectionChangeCommitted(object sender, EventArgs e)
         {
             cbxMatModel.SelectedIndex = cbxMatName.SelectedIndex;
         }
@@ -104,7 +104,7 @@ namespace Ex3.forms.main.OrderOperation
         {
             try
             {
-                int num = int.Parse(txtMatAmount.Text);
+                int num = int.Parse(s);
                 if (num <= 0)
                 {
                     MessageBox.Show("数量必须大于0");
@@ -119,13 +119,13 @@ namespace Ex3.forms.main.OrderOperation
             return true;
         }
 
-        private void txtMatAmount_Validating(object sender, CancelEventArgs e)
+        private void TxtMatAmount_Validating(object sender, CancelEventArgs e)
         {
             if (txtMatAmount.Text.Length > 0)
                 ValidateAmount(txtMatAmount.Text);
         }
 
-        private void cbxSupName_SelectedIndexChanged(object sender, EventArgs e)
+        private void CbxSupName_SelectedIndexChanged(object sender, EventArgs e)
         {
             var principal = (from sup in suppliers
                              where
@@ -144,7 +144,7 @@ namespace Ex3.forms.main.OrderOperation
             txtSupPriEmail.Text = principal.principalEmail;
         }
 
-        private void btnSubmit_Click(object sender, EventArgs e)
+        private void BtnSubmit_Click(object sender, EventArgs e)
         {
             if (txtMatAmount.Text.Length == 0)
             {
@@ -158,7 +158,6 @@ namespace Ex3.forms.main.OrderOperation
                     cbxMatName.Text,
                     int.Parse(txtMatAmount.Text),
                     cbxMatModel.Text,
-                    cbxManName.SelectedIndex + 1,
                     cbxManName.Text,
                     SupIds[cbxSupName.SelectedIndex],
                     cbxSupName.Text
@@ -167,7 +166,7 @@ namespace Ex3.forms.main.OrderOperation
             this.Close();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void BtnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }

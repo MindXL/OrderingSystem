@@ -20,7 +20,7 @@ namespace Ex3.forms.authentication
             txtPassword.PasswordChar = '*';
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void BtnLogin_Click(object sender, EventArgs e)
         {
             string account = txtAccount.Text;
             string password = txtPassword.Text;

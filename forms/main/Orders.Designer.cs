@@ -69,7 +69,7 @@
             this.btnShowAllOrder.TabIndex = 2;
             this.btnShowAllOrder.Text = "显示所有订单（刷新）";
             this.btnShowAllOrder.UseVisualStyleBackColor = true;
-            this.btnShowAllOrder.Click += new System.EventHandler(this.btnShowAllOrder_Click);
+            this.btnShowAllOrder.Click += new System.EventHandler(this.BtnShowAllOrder_Click);
             // 
             // btnShowUnauthorized
             // 
@@ -80,7 +80,7 @@
             this.btnShowUnauthorized.TabIndex = 3;
             this.btnShowUnauthorized.Text = "未批准订单";
             this.btnShowUnauthorized.UseVisualStyleBackColor = true;
-            this.btnShowUnauthorized.Click += new System.EventHandler(this.btnShowUnauthorized_Click);
+            this.btnShowUnauthorized.Click += new System.EventHandler(this.BtnShowUnauthorized_Click);
             // 
             // btnShowUnfinished
             // 
@@ -91,7 +91,7 @@
             this.btnShowUnfinished.TabIndex = 4;
             this.btnShowUnfinished.Text = "未完成订单";
             this.btnShowUnfinished.UseVisualStyleBackColor = true;
-            this.btnShowUnfinished.Click += new System.EventHandler(this.btnShowUnfinished_Click);
+            this.btnShowUnfinished.Click += new System.EventHandler(this.BtnShowUnfinished_Click);
             // 
             // btnShowFinished
             // 
@@ -102,7 +102,7 @@
             this.btnShowFinished.TabIndex = 5;
             this.btnShowFinished.Text = "已完成订单";
             this.btnShowFinished.UseVisualStyleBackColor = true;
-            this.btnShowFinished.Click += new System.EventHandler(this.btnShowFinished_Click);
+            this.btnShowFinished.Click += new System.EventHandler(this.BtnShowFinished_Click);
             // 
             // btnCreateOrder
             // 
@@ -113,7 +113,7 @@
             this.btnCreateOrder.TabIndex = 6;
             this.btnCreateOrder.Text = "创建订单";
             this.btnCreateOrder.UseVisualStyleBackColor = true;
-            this.btnCreateOrder.Click += new System.EventHandler(this.btnCreateOrder_Click);
+            this.btnCreateOrder.Click += new System.EventHandler(this.BtnCreateOrder_Click);
             // 
             // btnShowInventoryDlg
             // 
@@ -124,7 +124,7 @@
             this.btnShowInventoryDlg.TabIndex = 7;
             this.btnShowInventoryDlg.Text = "查看库存";
             this.btnShowInventoryDlg.UseVisualStyleBackColor = true;
-            this.btnShowInventoryDlg.Click += new System.EventHandler(this.btnShowInventoryDlg_Click);
+            this.btnShowInventoryDlg.Click += new System.EventHandler(this.BtnShowInventoryDlg_Click);
             // 
             // Orders
             // 

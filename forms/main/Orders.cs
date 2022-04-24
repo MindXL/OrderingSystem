@@ -45,32 +45,32 @@ namespace Ex3.forms.main
             lblOrdNum.Text = "显示数量：" + orders.Count().ToString();
         }
 
-        private void btnShowAllOrder_Click(object sender, EventArgs e)
+        private void BtnShowAllOrder_Click(object sender, EventArgs e)
         {
             BindData();
         }
 
-        private void btnShowUnauthorized_Click(object sender, EventArgs e)
+        private void BtnShowUnauthorized_Click(object sender, EventArgs e)
         {
             BindData(OrderState.Unaurhorized);
         }
 
-        private void btnShowUnfinished_Click(object sender, EventArgs e)
+        private void BtnShowUnfinished_Click(object sender, EventArgs e)
         {
             BindData(OrderState.Unfinished);
         }
 
-        private void btnShowFinished_Click(object sender, EventArgs e)
+        private void BtnShowFinished_Click(object sender, EventArgs e)
         {
             BindData(OrderState.Finished);
         }
 
-        private void btnCreateOrder_Click(object sender, EventArgs e)
+        private void BtnCreateOrder_Click(object sender, EventArgs e)
         {
             CreateOrder.ShowUnique();
         }
 
-        private void btnShowInventoryDlg_Click(object sender, EventArgs e)
+        private void BtnShowInventoryDlg_Click(object sender, EventArgs e)
         {
             this.Hide();
             (new Inventory()).ShowDialog();

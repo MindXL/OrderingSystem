@@ -54,12 +54,12 @@ namespace Ex3.forms.main
             }
         }
 
-        private void btnShowInventory_Click(object sender, EventArgs e)
+        private void BtnShowInventory_Click(object sender, EventArgs e)
         {
             BindData();
         }
 
-        private void btnWarn_Click(object sender, EventArgs e)
+        private void BtnWarn_Click(object sender, EventArgs e)
         {
             BindData(true);
         }
@@ -85,13 +85,13 @@ namespace Ex3.forms.main
             this.Close();
         }
 
-        private void createOrder_Click(object sender, EventArgs e)
+        private void CreateOrder_Click(object sender, EventArgs e)
         {
             //int id = int.Parse(gvInventory.SelectedRows[0].Cells[0].Value.ToString());
             ShowOrdersDlg();
         }
 
-        private void btnShowOrderDlg_Click(object sender, EventArgs e)
+        private void BtnShowOrderDlg_Click(object sender, EventArgs e)
         {
             ShowOrdersDlg();
         }

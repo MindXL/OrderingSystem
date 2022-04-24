@@ -79,7 +79,7 @@
             this.btnAddMaterial.TabIndex = 3;
             this.btnAddMaterial.Text = "添加材料";
             this.btnAddMaterial.UseVisualStyleBackColor = true;
-            this.btnAddMaterial.Click += new System.EventHandler(this.btnAddMaterial_Click);
+            this.btnAddMaterial.Click += new System.EventHandler(this.BtnAddMaterial_Click);
             // 
             // btnCreateOrder
             // 
@@ -90,7 +90,7 @@
             this.btnCreateOrder.TabIndex = 4;
             this.btnCreateOrder.Text = "生成订单";
             this.btnCreateOrder.UseVisualStyleBackColor = true;
-            this.btnCreateOrder.Click += new System.EventHandler(this.btnCreateOrder_Click);
+            this.btnCreateOrder.Click += new System.EventHandler(this.BtnCreateOrder_Click);
             // 
             // lblTotalPrice
             // 
@@ -107,7 +107,7 @@
             this.txtTotalPrice.Name = "txtTotalPrice";
             this.txtTotalPrice.Size = new System.Drawing.Size(100, 25);
             this.txtTotalPrice.TabIndex = 6;
-            this.txtTotalPrice.Validating += new System.ComponentModel.CancelEventHandler(this.txtTotalPrice_Validating);
+            this.txtTotalPrice.Validating += new System.ComponentModel.CancelEventHandler(this.TxtTotalPrice_Validating);
             // 
             // lblFinalPrice
             // 
@@ -124,7 +124,7 @@
             this.txtFinalPrice.Name = "txtFinalPrice";
             this.txtFinalPrice.Size = new System.Drawing.Size(100, 25);
             this.txtFinalPrice.TabIndex = 8;
-            this.txtFinalPrice.Validating += new System.ComponentModel.CancelEventHandler(this.txtFinalPrice_Validating);
+            this.txtFinalPrice.Validating += new System.ComponentModel.CancelEventHandler(this.TxtFinalPrice_Validating);
             // 
             // CreateOrder
             // 

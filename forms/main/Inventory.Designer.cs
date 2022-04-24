@@ -65,7 +65,7 @@
             this.createOrder.Name = "createOrder";
             this.createOrder.Size = new System.Drawing.Size(138, 24);
             this.createOrder.Text = "生成订单";
-            this.createOrder.Click += new System.EventHandler(this.createOrder_Click);
+            this.createOrder.Click += new System.EventHandler(this.CreateOrder_Click);
             // 
             // btnWarn
             // 
@@ -77,7 +77,7 @@
             this.btnWarn.TabIndex = 1;
             this.btnWarn.Text = "库存预警";
             this.btnWarn.UseVisualStyleBackColor = true;
-            this.btnWarn.Click += new System.EventHandler(this.btnWarn_Click);
+            this.btnWarn.Click += new System.EventHandler(this.BtnWarn_Click);
             // 
             // btnShowInventory
             // 
@@ -88,7 +88,7 @@
             this.btnShowInventory.TabIndex = 2;
             this.btnShowInventory.Text = "查看库存（刷新）";
             this.btnShowInventory.UseVisualStyleBackColor = true;
-            this.btnShowInventory.Click += new System.EventHandler(this.btnShowInventory_Click);
+            this.btnShowInventory.Click += new System.EventHandler(this.BtnShowInventory_Click);
             // 
             // lblMatNum
             // 
@@ -108,7 +108,7 @@
             this.btnShowOrderDlg.TabIndex = 4;
             this.btnShowOrderDlg.Text = "查看订单";
             this.btnShowOrderDlg.UseVisualStyleBackColor = true;
-            this.btnShowOrderDlg.Click += new System.EventHandler(this.btnShowOrderDlg_Click);
+            this.btnShowOrderDlg.Click += new System.EventHandler(this.BtnShowOrderDlg_Click);
             // 
             // Inventory
             // 

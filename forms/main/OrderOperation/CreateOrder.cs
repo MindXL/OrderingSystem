@@ -56,20 +56,22 @@ namespace Ex3.forms.main.OrderOperation
             gvMaterials.DataSource = dt;
         }
 
-        private void btnAddMaterial_Click(object sender, EventArgs e)
+        private void BtnAddMaterial_Click(object sender, EventArgs e)
         {
             SelectMaterial.ShowUnique();
 
             BindData();
         }
 
-        public static void AddRecord(int matId, string matName, int matAmount, string matModel, int manId, string manName, int supId, string supName)
+        public static void AddRecord(int matId, string matName, int matAmount, string matModel, string manName, int supId, string supName)
         {
-            UnfinishedRecord record = new UnfinishedRecord();
-            record.matId = matId;
-            record.supId = supId;
-            record.amount = 0;
-            record.expectAmount = matAmount;
+            UnfinishedRecord record = new UnfinishedRecord
+            {
+                matId = matId,
+                supId = supId,
+                amount = 0,
+                expectAmount = matAmount
+            };
             records.Add(record);
             dt.Rows.Add(matName, matAmount, matModel, manName, supName);
         }
@@ -98,19 +100,19 @@ namespace Ex3.forms.main.OrderOperation
             return true;
         }
 
-        private void txtTotalPrice_Validating(object sender, CancelEventArgs e)
+        private void TxtTotalPrice_Validating(object sender, CancelEventArgs e)
         {
             if (txtTotalPrice.Text.Length > 0)
                 ValidatePrice(txtTotalPrice.Text);
         }
 
-        private void txtFinalPrice_Validating(object sender, CancelEventArgs e)
+        private void TxtFinalPrice_Validating(object sender, CancelEventArgs e)
         {
             if (txtFinalPrice.Text.Length > 0)
                 ValidatePrice(txtFinalPrice.Text);
         }
 
-        private void btnCreateOrder_Click(object sender, EventArgs e)
+        private void BtnCreateOrder_Click(object sender, EventArgs e)
         {
             if (txtTotalPrice.Text.Length == 0)
             {
@@ -136,13 +138,15 @@ namespace Ex3.forms.main.OrderOperation
                 record.orderId = orderId;
             }
 
-            Order order = new Order();
-            order.state = (byte)OrderState.Unaurhorized;
-            order.description = txtDescription.Text;
-            order.principalId = Globals.character.id;
-            order.totalPrice = int.Parse(txtTotalPrice.Text);
-            order.finalPrice = int.Parse(txtFinalPrice.Text);
-            order.genDate = DateTime.Now;
+            Order order = new Order
+            {
+                state = (byte)OrderState.Unaurhorized,
+                description = txtDescription.Text,
+                principalId = Globals.character.id,
+                totalPrice = int.Parse(txtTotalPrice.Text),
+                finalPrice = int.Parse(txtFinalPrice.Text),
+                genDate = DateTime.Now
+            };
 
             Ex3DataContext db = new Ex3DataContext();
             db.Order.InsertOnSubmit(order);

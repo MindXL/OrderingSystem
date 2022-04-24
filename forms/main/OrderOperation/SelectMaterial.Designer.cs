@@ -60,7 +60,7 @@
             this.cbxManName.Size = new System.Drawing.Size(121, 23);
             this.cbxManName.TabIndex = 2;
             this.cbxManName.ValueMember = "id";
-            this.cbxManName.SelectedIndexChanged += new System.EventHandler(this.cbxManName_SelectedIndexChanged);
+            this.cbxManName.SelectedIndexChanged += new System.EventHandler(this.CbxManName_SelectedIndexChanged);
             // 
             // lblManName
             // 
@@ -91,7 +91,7 @@
             this.cbxMatModel.TabIndex = 5;
             this.cbxMatModel.Tag = "";
             this.cbxMatModel.ValueMember = "id";
-            this.cbxMatModel.SelectionChangeCommitted += new System.EventHandler(this.cbxMatModel_SelectionChangeCommitted);
+            this.cbxMatModel.SelectionChangeCommitted += new System.EventHandler(this.CbxMatModel_SelectionChangeCommitted);
             // 
             // lblMatName
             // 
@@ -110,7 +110,7 @@
             this.cbxMatName.Name = "cbxMatName";
             this.cbxMatName.Size = new System.Drawing.Size(121, 23);
             this.cbxMatName.TabIndex = 7;
-            this.cbxMatName.SelectionChangeCommitted += new System.EventHandler(this.cbxMatName_SelectionChangeCommitted);
+            this.cbxMatName.SelectionChangeCommitted += new System.EventHandler(this.CbxMatName_SelectionChangeCommitted);
             // 
             // lblMatAmount
             // 
@@ -127,7 +127,7 @@
             this.txtMatAmount.Name = "txtMatAmount";
             this.txtMatAmount.Size = new System.Drawing.Size(100, 25);
             this.txtMatAmount.TabIndex = 9;
-            this.txtMatAmount.Validating += new System.ComponentModel.CancelEventHandler(this.txtMatAmount_Validating);
+            this.txtMatAmount.Validating += new System.ComponentModel.CancelEventHandler(this.TxtMatAmount_Validating);
             // 
             // cbxSupName
             // 
@@ -137,7 +137,7 @@
             this.cbxSupName.Name = "cbxSupName";
             this.cbxSupName.Size = new System.Drawing.Size(121, 23);
             this.cbxSupName.TabIndex = 10;
-            this.cbxSupName.SelectedIndexChanged += new System.EventHandler(this.cbxSupName_SelectedIndexChanged);
+            this.cbxSupName.SelectedIndexChanged += new System.EventHandler(this.CbxSupName_SelectedIndexChanged);
             // 
             // lblSupName
             // 
@@ -225,7 +225,7 @@
             this.btnSubmit.TabIndex = 13;
             this.btnSubmit.Text = "添加";
             this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            this.btnSubmit.Click += new System.EventHandler(this.BtnSubmit_Click);
             // 
             // btnCancel
             // 
@@ -236,7 +236,7 @@
             this.btnCancel.TabIndex = 14;
             this.btnCancel.Text = "取消";
             this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // SelectMaterial
             // 
