@@ -59,9 +59,5 @@ namespace Ex3.forms.authentication
                 this.Close();
             }
         }
-
-        private void lblRegister_Click(object sender, EventArgs e)
-        {
-        }
     }
 }

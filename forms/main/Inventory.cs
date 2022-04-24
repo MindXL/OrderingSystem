@@ -78,16 +78,22 @@ namespace Ex3.forms.main
             }
         }
 
-        private void createOrder_Click(object sender, EventArgs e)
-        {
-            int id = int.Parse(gvInventory.SelectedRows[0].Cells[0].Value.ToString());
-        }
-
-        private void btnShowOrderDlg_Click(object sender, EventArgs e)
+        private void ShowOrdersDlg()
         {
             this.Hide();
             (new Orders()).ShowDialog();
             this.Close();
+        }
+
+        private void createOrder_Click(object sender, EventArgs e)
+        {
+            //int id = int.Parse(gvInventory.SelectedRows[0].Cells[0].Value.ToString());
+            ShowOrdersDlg();
+        }
+
+        private void btnShowOrderDlg_Click(object sender, EventArgs e)
+        {
+            ShowOrdersDlg();
         }
     }
 }
