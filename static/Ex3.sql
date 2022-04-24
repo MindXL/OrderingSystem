@@ -104,7 +104,6 @@ CREATE TABLE [EntryRecord] (    -- 单个材料的入库记录
     [finalPrice] DECIMAL(11,2) NOT NULL CHECK([finalPrice]>=0),    -- 最终成交价
     [entryDate] DATETIME NOT NULL,    -- 入库时间
 
-    CHECK([finalPrice]<=[price]),
     PRIMARY KEY([orderId],[matId],[supId])
 )
 GO
