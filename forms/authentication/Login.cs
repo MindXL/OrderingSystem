@@ -17,6 +17,7 @@ namespace Ex3.forms.authentication
         public Login()
         {
             InitializeComponent();
+            txtPassword.PasswordChar = '*';
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
