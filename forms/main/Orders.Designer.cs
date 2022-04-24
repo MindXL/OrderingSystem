@@ -45,6 +45,7 @@
             this.gvOrder.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gvOrder.Location = new System.Drawing.Point(0, 150);
             this.gvOrder.Name = "gvOrder";
+            this.gvOrder.ReadOnly = true;
             this.gvOrder.RowHeadersWidth = 51;
             this.gvOrder.RowTemplate.Height = 27;
             this.gvOrder.Size = new System.Drawing.Size(800, 300);

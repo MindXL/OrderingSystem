@@ -46,6 +46,7 @@
             this.gvMaterials.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gvMaterials.Location = new System.Drawing.Point(0, 300);
             this.gvMaterials.Name = "gvMaterials";
+            this.gvMaterials.ReadOnly = true;
             this.gvMaterials.RowHeadersWidth = 51;
             this.gvMaterials.RowTemplate.Height = 27;
             this.gvMaterials.Size = new System.Drawing.Size(800, 150);
