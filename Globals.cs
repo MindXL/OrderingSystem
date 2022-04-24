@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ex3
 {
-    internal abstract class Globals
+    internal sealed class Globals
     {
         public static Character character = null;
     }

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Ex3
 {
-    internal abstract class Constants
+    internal sealed class Constants
     {
-        public static int MAX_ACCOUNT_LENGTH = 16;
-        public static int MAX_PASSWORD_LENGTH = 20;
+        public const int MAX_ACCOUNT_LENGTH = 16;
+        public const int MAX_PASSWORD_LENGTH = 20;
     }
 }

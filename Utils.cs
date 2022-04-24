@@ -8,7 +8,7 @@ using Ex3.lib;
 
 namespace Ex3
 {
-    internal abstract class Utils
+    internal sealed class Utils
     {
         public static string TranslateOrderState(OrderState state)
         {
@@ -31,7 +31,7 @@ namespace Ex3
                 case 2: return TranslateOrderState(OrderState.Finished);
             }
 
-            throw new Exception("Coder Wrong");
+            throw new Exception("Coder's fault");
         }
     }
 }
