@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Ex3" Class="Ex3DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\static\Ex3.mdf;Integrated Security=True" SettingsObjectName="Ex3.Properties.Settings" SettingsPropertyName="Ex3ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.EntryRecord" Member="EntryRecord">
+    <Type Name="EntryRecord">
+      <Column Name="orderId" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="matId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="supId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="price" Type="System.Decimal" DbType="Decimal(11,2) NOT NULL" CanBeNull="false" />
+      <Column Name="finalPrice" Type="System.Decimal" DbType="Decimal(11,2) NOT NULL" CanBeNull="false" />
+      <Column Name="entryDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Material_EntryRecord" Member="Material" ThisKey="matId" OtherKey="id" Type="Material" IsForeignKey="true" />
+      <Association Name="Order_EntryRecord" Member="Order" ThisKey="orderId" OtherKey="id" Type="Order" IsForeignKey="true" />
+      <Association Name="Supplier_EntryRecord" Member="Supplier" ThisKey="supId" OtherKey="id" Type="Supplier" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="User">
+    <Type Name="User">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="account" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="phone" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="User_Order" Member="Order" ThisKey="id" OtherKey="principalId" Type="Order" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ManSupCoop" Member="ManSupCoop">
+    <Type Name="ManSupCoop">
+      <Column Name="manId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="supId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Manufacturer_ManSupCoop" Member="Manufacturer" ThisKey="manId" OtherKey="id" Type="Manufacturer" IsForeignKey="true" />
+      <Association Name="Supplier_ManSupCoop" Member="Supplier" ThisKey="supId" OtherKey="id" Type="Supplier" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Manufacturer" Member="Manufacturer">
+    <Type Name="Manufacturer">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Association Name="Manufacturer_ManSupCoop" Member="ManSupCoop" ThisKey="id" OtherKey="manId" Type="ManSupCoop" />
+      <Association Name="Manufacturer_Material" Member="Material" ThisKey="id" OtherKey="manId" Type="Material" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Material" Member="Material">
+    <Type Name="Material">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="manId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="model" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="warningAmount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Material_EntryRecord" Member="EntryRecord" ThisKey="id" OtherKey="matId" Type="EntryRecord" />
+      <Association Name="Material_UnfinishedRecord" Member="UnfinishedRecord" ThisKey="id" OtherKey="matId" Type="UnfinishedRecord" />
+      <Association Name="Manufacturer_Material" Member="Manufacturer" ThisKey="manId" OtherKey="id" Type="Manufacturer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Order]" Member="Order">
+    <Type Name="Order">
+      <Column Name="id" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="state" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="principalId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="totalPrice" Type="System.Decimal" DbType="Decimal(11,2) NOT NULL" CanBeNull="false" />
+      <Column Name="finalPrice" Type="System.Decimal" DbType="Decimal(11,2) NOT NULL" CanBeNull="false" />
+      <Column Name="genDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="approveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="finishDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Order_EntryRecord" Member="EntryRecord" ThisKey="id" OtherKey="orderId" Type="EntryRecord" />
+      <Association Name="Order_UnfinishedRecord" Member="UnfinishedRecord" ThisKey="id" OtherKey="orderId" Type="UnfinishedRecord" />
+      <Association Name="User_Order" Member="User" ThisKey="principalId" OtherKey="id" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Supplier" Member="Supplier">
+    <Type Name="Supplier">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="principalName" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="principalPhone" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="principalEmail" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="Supplier_EntryRecord" Member="EntryRecord" ThisKey="id" OtherKey="supId" Type="EntryRecord" />
+      <Association Name="Supplier_ManSupCoop" Member="ManSupCoop" ThisKey="id" OtherKey="supId" Type="ManSupCoop" />
+      <Association Name="Supplier_UnfinishedRecord" Member="UnfinishedRecord" ThisKey="id" OtherKey="supId" Type="UnfinishedRecord" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UnfinishedRecord" Member="UnfinishedRecord">
+    <Type Name="UnfinishedRecord">
+      <Column Name="orderId" Type="System.String" DbType="VarChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="matId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="supId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="expectAmount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Material_UnfinishedRecord" Member="Material" ThisKey="matId" OtherKey="id" Type="Material" IsForeignKey="true" />
+      <Association Name="Order_UnfinishedRecord" Member="Order" ThisKey="orderId" OtherKey="id" Type="Order" IsForeignKey="true" />
+      <Association Name="Supplier_UnfinishedRecord" Member="Supplier" ThisKey="supId" OtherKey="id" Type="Supplier" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
