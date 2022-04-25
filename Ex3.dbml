@@ -60,8 +60,8 @@
       <Column Name="state" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
       <Column Name="description" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Column Name="principalId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="totalPrice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="finalPrice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="totalPrice" Type="System.Decimal" DbType="Decimal(11,2) NOT NULL" CanBeNull="false" />
+      <Column Name="finalPrice" Type="System.Decimal" DbType="Decimal(11,2) NOT NULL" CanBeNull="false" />
       <Column Name="genDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="approveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="finishDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />

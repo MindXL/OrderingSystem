@@ -78,7 +78,7 @@ namespace Ex3.forms.main.OrderOperation
 
         private static string HashOrderId()
         {
-            return DateTime.Now.ToString();
+            return DateTimeOffset.Now.ToUnixTimeSeconds().ToString();
         }
 
         private static bool ValidatePrice(string s)
@@ -140,11 +140,12 @@ namespace Ex3.forms.main.OrderOperation
 
             Order order = new Order
             {
+                id = orderId,
                 state = (byte)OrderState.Unaurhorized,
                 description = txtDescription.Text,
                 principalId = Globals.character.id,
-                totalPrice = int.Parse(txtTotalPrice.Text),
-                finalPrice = int.Parse(txtFinalPrice.Text),
+                totalPrice = decimal.Parse(txtTotalPrice.Text),
+                finalPrice = decimal.Parse(txtFinalPrice.Text),
                 genDate = DateTime.Now
             };
 

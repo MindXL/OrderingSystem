@@ -80,8 +80,8 @@ CREATE TABLE [Order] (    -- 订单
     [state] TINYINT NOT NULL DEFAULT 0 CHECK([state] BETWEEN 0 AND 2),    -- 订单状态{0:未批准, 1:进行中, 2:已完成}
     [description] NVARCHAR(200),
     [principalId] INT FOREIGN KEY REFERENCES [User],    -- 负责人（用户）编号
-    [totalPrice] INT NOT NULL CHECK([totalPrice]>=0),    -- 总价格
-    [finalPrice] INT NOT NULL CHECK([finalPrice]>=0),    -- 最终成交价
+    [totalPrice] DECIMAL(11,2) NOT NULL CHECK([totalPrice]>=0),    -- 总价格
+    [finalPrice] DECIMAL(11,2) NOT NULL CHECK([finalPrice]>=0),    -- 最终成交价
     [genDate] DATETIME NOT NULL,    -- 订单生成日期
     [approveDate] DATETIME,    -- 订单批准日期
     [finishDate] DATETIME    -- 订单完成日期

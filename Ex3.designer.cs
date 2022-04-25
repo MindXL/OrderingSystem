@@ -1293,9 +1293,9 @@ namespace Ex3
 		
 		private System.Nullable<int> _principalId;
 		
-		private int _totalPrice;
+		private decimal _totalPrice;
 		
-		private int _finalPrice;
+		private decimal _finalPrice;
 		
 		private System.DateTime _genDate;
 		
@@ -1321,9 +1321,9 @@ namespace Ex3
     partial void OndescriptionChanged();
     partial void OnprincipalIdChanging(System.Nullable<int> value);
     partial void OnprincipalIdChanged();
-    partial void OntotalPriceChanging(int value);
+    partial void OntotalPriceChanging(decimal value);
     partial void OntotalPriceChanged();
-    partial void OnfinalPriceChanging(int value);
+    partial void OnfinalPriceChanging(decimal value);
     partial void OnfinalPriceChanged();
     partial void OngenDateChanging(System.DateTime value);
     partial void OngenDateChanged();
@@ -1425,8 +1425,8 @@ namespace Ex3
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_totalPrice", DbType="Int NOT NULL")]
-		public int totalPrice
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_totalPrice", DbType="Decimal(11,2) NOT NULL")]
+		public decimal totalPrice
 		{
 			get
 			{
@@ -1445,8 +1445,8 @@ namespace Ex3
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_finalPrice", DbType="Int NOT NULL")]
-		public int finalPrice
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_finalPrice", DbType="Decimal(11,2) NOT NULL")]
+		public decimal finalPrice
 		{
 			get
 			{
